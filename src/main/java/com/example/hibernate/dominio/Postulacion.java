@@ -1,20 +1,25 @@
 package com.example.hibernate.dominio;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
-
+@Getter
+@Setter
 @Entity
+@Table(name = "Postulacion")
 public class Postulacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long postulacion_id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "publicacion_ID")
     private Publicacion publicacion;
 
-    @ManyToOne
-    @JoinColumn(name = "postulante_id")
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "postulante_id", referencedColumnName = "postulante_id")
     private Postulante postulante;
 
     public String CV;
@@ -23,25 +28,10 @@ public class Postulacion {
 
     public LocalDate fecha;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "estado_id")
     private EstadoPostulacion estado;
 
     private Boolean validaRequisitos;
 
-    public Postulante getPostulante() {
-        return postulante;
-    }
-
-    public void setPostulante(Postulante postulante) {
-        this.postulante = postulante;
-    }
-
-    public EstadoPostulacion getEstado() {
-        return estado;
-    }
-
-    public void setEstado(EstadoPostulacion estado) {
-        this.estado = estado;
-    }
 }

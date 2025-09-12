@@ -1,7 +1,11 @@
 package com.example.hibernate.dominio;
 
-import javax.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+@Getter
+@Setter
 @Entity
 public class Ubicacion {
 
@@ -14,5 +18,13 @@ public class Ubicacion {
     String calle;
     String provincia;
     String localidad;
-    Long numeracion;
+    Integer numeracion;
+
+    public Ubicacion(String nombre, String calle, String provincia, String localidad, Integer numeracion) {
+        this.nombre = nombre;
+        this.calle = calle;
+        this.provincia = provincia;
+        this.localidad = localidad;
+        this.numeracion = numeracion;
+    }
 }

@@ -1,9 +1,14 @@
 package com.example.hibernate.dominio;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 public class Publicacion {
     @Id
@@ -26,7 +31,7 @@ public class Publicacion {
 
     public Integer edadMaxima;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "ubicacion_id")
     private Ubicacion ubicacion;
 
@@ -35,18 +40,12 @@ public class Publicacion {
 
     public String informacionExtra;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name = "RequisitoXPublicacion",
             joinColumns = @JoinColumn(name = "Publicacion_ID"),
             inverseJoinColumns = @JoinColumn(name = "requisito_ID")
     )
     private List<Requisito> requisitos;
 
-    public Ubicacion getUbicacion() {
-        return ubicacion;
-    }
 
-    public void setUbicacion(Ubicacion ubicacion) {
-        this.ubicacion = ubicacion;
-    }
 }
