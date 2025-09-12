@@ -12,5 +12,5 @@ public class EstadoPostulacion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    String descripcion;
+    private String descripcion;
 }
