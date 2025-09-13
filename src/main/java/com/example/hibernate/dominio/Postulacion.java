@@ -34,4 +34,14 @@ public class Postulacion {
 
     private Boolean validaRequisitos;
 
+    @Override
+    public String toString() {
+        return "Postulacion{" +
+                "id=" + postulacion_id +
+                ", fecha=" + fecha +
+                ", estado=" + estado +
+                ", postulante=" + (postulante != null ? postulante.getNombre() + " " + postulante.getApellido() : "null") +
+                ", publicacion=" + (publicacion != null ? publicacion.getTipoProductoPublicitado() : "null") +
+                '}';
+    }
 }

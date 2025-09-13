@@ -27,4 +27,11 @@ public class Ubicacion {
         this.localidad = localidad;
         this.numeracion = numeracion;
     }
+    public Ubicacion(){
+
+    }
+    @Override
+    public String toString() {
+        return calle + " " + numeracion + ", " + localidad + " (" + provincia + ")";
+    }
 }

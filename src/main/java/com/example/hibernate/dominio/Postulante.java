@@ -20,4 +20,9 @@ public class Postulante {
 
     @OneToMany(mappedBy = "postulante")
     private List<Postulacion> postulaciones;
+
+    @Override
+    public String toString() {
+        return nombre + " " + apellido;
+    }
 }

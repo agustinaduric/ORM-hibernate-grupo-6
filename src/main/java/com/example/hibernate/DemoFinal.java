@@ -118,6 +118,8 @@ public class DemoFinal {
                 .getResultList();
 
         System.out.println(postulaciones);
+        System.out.println(publicacion1);
+        System.out.println(publicacion2);
 
         //Delete
         for (Postulacion post : postulaciones) {

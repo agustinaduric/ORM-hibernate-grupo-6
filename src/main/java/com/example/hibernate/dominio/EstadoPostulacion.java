@@ -24,4 +24,8 @@ public class EstadoPostulacion {
 
     public EstadoPostulacion() {
     }
+    @Override
+    public String toString() {
+        return "id: " + id + "descripcion: " + descripcion;
+    }
 }

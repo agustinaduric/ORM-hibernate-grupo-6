@@ -47,5 +47,18 @@ public class Publicacion {
     )
     private List<Requisito> requisitos;
 
-
+    @Override
+    public String toString() {
+        return "Publicacion{" +
+                "id=" + publicacion_id +
+                ", tipoProducto='" + tipoProductoPublicitado + '\'' +
+                ", ubicacion=" + ubicacion +
+                ", edadMin=" + edadMinima +
+                ", edadMax=" + edadMaxima +
+                ", generoPersona=" + generoPersona +
+                ", generoObra=" + generoObra +
+                ", remuneracion=" + remuneracion +
+                ", requisitos=" + requisitos +
+                '}';
+    }
 }

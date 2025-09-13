@@ -17,4 +17,10 @@ public class Requisito {
 
     String descripcion;
 
+    @Override
+    public String toString() {
+        return "Requisito{" +
+                "descripcion='" + descripcion + '\'' +
+                '}';
+    }
 }
